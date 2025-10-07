@@ -24,9 +24,10 @@ public class Buah {
         System.out.println("Berat: " + this.Berat);
         System.out.println("Harga: " + this.harga);
         System.out.println("Jumlah Beli: " + this.jumlahBeli + "kg");
-        System.out.println("Harga Sebelum Diskon: Rp" + String.format("%.2f", hargaSebelumDiskon));
-        System.out.println("Total Diskon: Rp" + String.format("%.2f", totalDiskon));
-        System.out.println("Harga Setelah Diskon: Rp" + String.format("%.2f", hargaSetelahDiskon));
+        System.out.printf(Locale.US,"Harga Sebelum Diskon: Rp%.2f\n", hargaSebelumDiskon);
+        System.out.printf(Locale.US,"Total Diskon: Rp%.2f\n", totalDiskon);
+        System.out.printf(Locale.US,"Harga Setelah Diskon: Rp%.2f\n", hargaSetelahDiskon);
         System.out.println();
 	}
 }
+
