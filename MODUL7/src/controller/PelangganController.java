@@ -83,9 +83,7 @@ public class PelangganController {
         });
     }
 
-    // ==========================
     // Search / Filter tabel
-    // ==========================
     private void setupSearchFilter() {
         if (txtSearch != null) {
             txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -267,3 +265,4 @@ public class PelangganController {
         alert.showAndWait();
     }
 }
+
