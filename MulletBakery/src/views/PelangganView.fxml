@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.PelangganController">
+
+    <top>
+        <HBox style="-fx-background-color: linear-gradient(to right, #8B5A2B, #613916);" alignment="CENTER_LEFT" spacing="12">
+            <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+
+            <Label text="Bakery Mullet — Manajemen Pelanggan"
+                   style="-fx-text-fill:white; -fx-font-size:18; -fx-font-weight:bold;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Dashboard" onAction="#back" style="-fx-background-color:#D7B899; -fx-text-fill:#613916;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="16">
+            <padding><Insets top="16" left="16" right="16" bottom="16"/></padding>
+
+            <!-- FORM -->
+            <VBox spacing="10" prefWidth="330" style="-fx-background-color:white; -fx-background-radius:8;">
+                <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+
+                <Label text="Form Pelanggan" style="-fx-font-weight:bold; -fx-text-fill:#613916;"/>
+
+                <GridPane hgap="10" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="90" halignment="RIGHT"/>
+                        <ColumnConstraints minWidth="200"/>
+                    </columnConstraints>
+
+                    <Label text="Nama:" GridPane.rowIndex="0"/>
+                    <TextField fx:id="txtNama" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Telepon:" GridPane.rowIndex="1"/>
+                    <TextField fx:id="txtTelepon" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Email:" GridPane.rowIndex="2"/>
+                    <TextField fx:id="txtEmail" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Simpan" onAction="#simpan" style="-fx-background-color:#6D4C41; -fx-text-fill:white;"/>
+                    <Button text="Edit" onAction="#edit" style="-fx-background-color:#D7B899; -fx-text-fill:#613916;"/>
+                    <Button text="Hapus" onAction="#hapus" style="-fx-background-color:#E97A5A; -fx-text-fill:white;"/>
+                </HBox>
+            </VBox>
+
+            <!-- TABLE -->
+            <VBox spacing="10" style="-fx-background-color:white; -fx-background-radius:8;" VBox.vgrow="ALWAYS">
+                <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+
+                <Label text="Daftar Pelanggan" style="-fx-font-weight:bold; -fx-text-fill:#613916;"/>
+
+                <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colNama" text="Nama" prefWidth="250"/>
+                        <TableColumn fx:id="colTelepon" text="Telepon" prefWidth="160"/>
+                        <TableColumn fx:id="colEmail" text="Email" prefWidth="160"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

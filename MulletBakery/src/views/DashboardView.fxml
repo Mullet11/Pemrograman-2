@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.DashboardController" prefWidth="1000" prefHeight="600">
+
+    <!-- Header -->
+    <top>
+        <HBox style="-fx-background-color: linear-gradient(to right, #8B5A2B, #613916);" 
+              alignment="CENTER_LEFT" spacing="12">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <Label text="Bakery Mullet — Dashboard" style="-fx-text-fill:white; -fx-font-size:18; -fx-font-weight:bold;" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Menu" onAction="#goMenu" style="-fx-background-color:#D7B899; -fx-text-fill:#613916;"/>
+            <Button text="Transaksi" onAction="#goTransaksi" style="-fx-background-color:#D7B899; -fx-text-fill:#613916;"/>
+            <Button text="Pelanggan" onAction="#goPelanggan" style="-fx-background-color:#D7B899; -fx-text-fill:#613916;"/>
+            <Button text="Akun" onAction="#goAkun" style="-fx-background-color:#D7B899; -fx-text-fill:#613916;"/>
+        </HBox>
+    </top>
+
+    <!-- Center content -->
+    <center>
+        <VBox spacing="18">
+            <padding>
+                <Insets top="18" right="18" bottom="18" left="18"/>
+            </padding>
+
+            <!-- Cards -->
+            <HBox spacing="16">
+
+                <VBox style="-fx-background-color: linear-gradient(#F5E6D3, #D7B899); -fx-border-radius:8; -fx-background-radius:8; -fx-padding:16;" prefWidth="220">
+                    <padding>
+                        <Insets top="16" right="16" bottom="16" left="16"/>
+                    </padding>
+                    <Label text="Menu" style="-fx-font-size:14px; -fx-text-fill:#613916;"/>
+                    <Label fx:id="lblMenu" text="0" style="-fx-font-size:28px; -fx-font-weight:bold; -fx-text-fill:#613916;"/>
+                </VBox>
+
+                <VBox style="-fx-background-color: linear-gradient(#F5E6D3, #D7B899); -fx-border-radius:8; -fx-background-radius:8;">
+                    <padding>
+                        <Insets top="16" right="16" bottom="16" left="16"/>
+                    </padding>
+                    <Label text="Pelanggan" style="-fx-font-size:14px; -fx-text-fill:#613916;"/>
+                    <Label fx:id="lblPelanggan" text="0" style="-fx-font-size:28px; -fx-font-weight:bold; -fx-text-fill:#613916;"/>
+                </VBox>
+
+                <VBox style="-fx-background-color: linear-gradient(#F5E6D3, #D7B899); -fx-border-radius:8; -fx-background-radius:8;">
+                    <padding>
+                        <Insets top="16" right="16" bottom="16" left="16"/>
+                    </padding>
+                    <Label text="Transaksi" style="-fx-font-size:14px; -fx-text-fill:#613916;"/>
+                    <Label fx:id="lblTransaksi" text="0" style="-fx-font-size:28px; -fx-font-weight:bold; -fx-text-fill:#613916;"/>
+                </VBox>
+
+                <VBox style="-fx-background-color: linear-gradient(#FFF1E6, #FFDAB9); -fx-border-radius:8; -fx-background-radius:8;">
+                    <padding>
+                        <Insets top="16" right="16" bottom="16" left="16"/>
+                    </padding>
+                    <Label text="Pendapatan (Total)" style="-fx-font-size:14px; -fx-text-fill:#613916;"/>
+                    <Label fx:id="lblPendapatan" text="Rp 0" style="-fx-font-size:28px; -fx-font-weight:bold; -fx-text-fill:#613916;"/>
+                </VBox>
+            </HBox>
+
+            <!-- Table + Quick Actions -->
+            <HBox spacing="16">
+
+                <!-- Transaction summary -->
+                <VBox spacing="8" style="-fx-background-color:white; -fx-border-radius:8; -fx-background-radius:8;" prefWidth="640">
+                    <padding>
+                        <Insets top="12" right="12" bottom="12" left="12"/>
+                    </padding>
+
+                    <Label text="Ringkasan Transaksi Terakhir" style="-fx-font-weight:bold; -fx-text-fill:#613916;"/>
+                    <TableView fx:id="tblTransaksi" prefHeight="220">
+                        <columns>
+                            <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+					        <TableColumn fx:id="colPelanggan" text="Pelanggan" prefWidth="200"/>
+					        <TableColumn fx:id="colTotal" text="Total" prefWidth="160"/>
+					        <TableColumn fx:id="colTanggal" text="Tanggal" prefWidth="200"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- Quick actions -->
+                <VBox spacing="8" style="-fx-background-color:white; -fx-border-radius:8; -fx-background-radius:8;" prefWidth="320">
+                    <padding>
+                        <Insets top="12" right="12" bottom="12" left="12"/>
+                    </padding>
+
+                    <Label text="Quick Actions" style="-fx-font-weight:bold; -fx-text-fill:#613916;"/>
+                    <Button text="Buat Transaksi Baru" onAction="#goTransaksi" style="-fx-background-color:#613916; -fx-text-fill:white;"/>
+                    <Button text="Tambah Menu Baru" onAction="#goMenu" style="-fx-background-color:#D7B899; -fx-text-fill:#613916;"/>
+                </VBox>
+
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

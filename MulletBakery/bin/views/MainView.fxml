@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <center>
+        <StackPane>
+            <Label text="Mullet Bakery — Main Window"
+                   style="-fx-font-size:18; -fx-text-fill:#613916;"/>
+        </StackPane>
+    </center>
+
+</BorderPane>
