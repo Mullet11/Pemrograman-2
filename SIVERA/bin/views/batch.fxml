@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.BatchController">
+
+    <BorderPane AnchorPane.topAnchor="0"
+                AnchorPane.bottomAnchor="0"
+                AnchorPane.leftAnchor="0"
+                AnchorPane.rightAnchor="0">
+
+        <center>
+            <VBox spacing="15">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <!-- JUDUL -->
+                <Label text="Batch Tanaman"
+                       style="-fx-font-size:18; -fx-font-weight:bold;"/>
+
+                <!-- TABLE -->
+                <TableView fx:id="batchTable">
+                    <columns>
+                        <TableColumn fx:id="plantCol" text="Tanaman"/>
+                        <TableColumn fx:id="rackCol" text="Rak"/>
+                        <TableColumn fx:id="statusCol" text="Status"/>
+                    </columns>
+                </TableView>
+
+                <!-- FORM -->
+                <HBox spacing="10">
+                    <ComboBox fx:id="plantBox" promptText="Tanaman"/>
+                    <ComboBox fx:id="rackBox" promptText="Rak"/>
+                </HBox>
+
+                <!-- BUTTON -->
+                <HBox spacing="10">
+                    <Button text="Tambah Batch" onAction="#handleAdd"/>
+                    <Button text="Hapus Batch" onAction="#handleDelete"/>
+                    <Button text="Refresh" onAction="#handleRefresh"/>
+                </HBox>
+
+            </VBox>
+        </center>
+
+    </BorderPane>
+
+</AnchorPane>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.DashboardController"
+            stylesheets="@../style/dashboard.css"
+            prefWidth="1200"
+            prefHeight="720">
+
+    <!-- ================= SIDEBAR (FULL HEIGHT) ================= -->
+    <left>
+        <VBox prefWidth="220" styleClass="sidebar">
+
+            <!-- BRAND -->
+            <VBox styleClass="sidebar-brand" alignment="CENTER_LEFT">
+                <Label text="SIVERA" styleClass="sidebar-title"/>
+                <Label text="Monitoring System" styleClass="sidebar-subtitle"/>
+            </VBox>
+
+            <Separator/>
+
+            <!-- MENU -->
+            <VBox spacing="4" styleClass="sidebar-menu">
+
+                <Button text="Dashboard"
+                        onAction="#showDashboard"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Tanaman"
+                        onAction="#showTanaman"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Rak Tanaman"
+                        onAction="#showRack"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Batch Tanaman"
+                        onAction="#showBatch"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Simulasi"
+                        onAction="#showSimulation"
+                        styleClass="sidebar-button"/>
+
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- LOGOUT -->
+            <VBox styleClass="sidebar-footer">
+                <Button text="Logout"
+                        onAction="#handleLogout"
+                        styleClass="sidebar-logout"/>
+            </VBox>
+
+        </VBox>
+    </left>
+
+    <!-- ================= MAIN AREA ================= -->
+    <center>
+        <VBox>
+
+            <!-- ================= TOP BAR ================= -->
+            <HBox styleClass="topbar" alignment="CENTER_LEFT">
+
+                <VBox spacing="2">
+                    <Label text="Dashboard" styleClass="topbar-title"/>
+                    <Label text="Monitoring Lingkungan dan Batch"
+                           styleClass="topbar-subtitle"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <HBox styleClass="topbar-user-box" alignment="CENTER">
+                    <Label text="Admin" styleClass="topbar-user"/>
+                </HBox>
+
+            </HBox>
+
+            <!-- ================= CONTENT ================= -->
+            <AnchorPane fx:id="contentPane" VBox.vgrow="ALWAYS">
+
+                <ScrollPane fx:id="dashboardPane"
+                            fitToWidth="true"
+                            AnchorPane.topAnchor="0"
+                            AnchorPane.bottomAnchor="0"
+                            AnchorPane.leftAnchor="0"
+                            AnchorPane.rightAnchor="0">
+
+                    <VBox spacing="24" styleClass="dashboard-root">
+                        <padding>
+                            <Insets top="24" right="24" bottom="24" left="24"/>
+                        </padding>
+
+                        <!-- SUMMARY -->
+                        <HBox spacing="16">
+                            <VBox styleClass="summary-card">
+                                <Label text="Total Rak"/>
+                                <Label fx:id="totalRackLabel"
+                                       styleClass="summary-value"/>
+                            </VBox>
+
+                            <VBox styleClass="summary-card">
+                                <Label text="Total Batch"/>
+                                <Label fx:id="totalBatchLabel"
+                                       styleClass="summary-value"/>
+                            </VBox>
+
+                            <VBox styleClass="summary-card">
+                                <Label text="Suhu Umum"/>
+                                <Label fx:id="temperatureLabel"
+                                       styleClass="summary-value"/>
+                            </VBox>
+
+                            <VBox styleClass="summary-card">
+                                <Label text="pH Umum"/>
+                                <Label fx:id="phLabel"
+                                       styleClass="summary-value"/>
+                            </VBox>
+                        </HBox>
+
+                        <!-- GRAFIK -->
+                        <VBox spacing="12">
+                            <Label text="Monitoring Lingkungan"
+                                   styleClass="section-title"/>
+
+                            <HBox spacing="20">
+
+                                <VBox styleClass="chart-card">
+                                    <Label text="Grafik Suhu Umum"
+                                           styleClass="chart-title"/>
+                                    <LineChart fx:id="temperatureChart"
+                                               prefHeight="260">
+                                        <xAxis>
+                                            <CategoryAxis/>
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis/>
+                                        </yAxis>
+                                    </LineChart>
+                                </VBox>
+
+                                <VBox styleClass="chart-card">
+                                    <Label text="Grafik pH Umum"
+                                           styleClass="chart-title"/>
+                                    <LineChart fx:id="phChart"
+                                               prefHeight="260">
+                                        <xAxis>
+                                            <CategoryAxis/>
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis/>
+                                        </yAxis>
+                                    </LineChart>
+                                </VBox>
+
+                            </HBox>
+                        </VBox>
+
+                        <!-- BATCH CARD -->
+                        <VBox spacing="12">
+                            <Label text="Status Batch Tanaman"
+                                   styleClass="section-title"/>
+                            <FlowPane fx:id="batchCardPane"
+                                      hgap="16"
+                                      vgap="16"
+                                      prefWrapLength="1100"/>
+                        </VBox>
+
+                    </VBox>
+                </ScrollPane>
+
+            </AnchorPane>
+        </VBox>
+    </center>
+
+</BorderPane>

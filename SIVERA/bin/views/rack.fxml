@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.RackController">
+
+    <BorderPane AnchorPane.topAnchor="0"
+                AnchorPane.bottomAnchor="0"
+                AnchorPane.leftAnchor="0"
+                AnchorPane.rightAnchor="0">
+
+        <center>
+            <VBox spacing="15">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <Label text="Manajemen Rak"
+                       style="-fx-font-size:18; -fx-font-weight:bold;"/>
+
+                <TableView fx:id="rackTable">
+                    <columns>
+                        <TableColumn fx:id="nameCol" text="Nama Rak"/>
+                        <TableColumn fx:id="locationCol" text="Lokasi"/>
+                        <TableColumn fx:id="capacityCol" text="Kapasitas"/>
+                    </columns>
+                </TableView>
+
+                <HBox spacing="10">
+                    <TextField fx:id="nameField" promptText="Nama Rak"/>
+                    <TextField fx:id="locationField" promptText="Lokasi"/>
+                    <TextField fx:id="capacityField" promptText="Kapasitas"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Button text="Tambah" onAction="#handleAdd"/>
+                    <Button text="Hapus" onAction="#handleDelete"/>
+                    <Button text="Refresh" onAction="#handleRefresh"/>
+                </HBox>
+
+            </VBox>
+        </center>
+
+    </BorderPane>
+
+</AnchorPane>

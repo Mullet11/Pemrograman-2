@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane prefWidth="900.0" prefHeight="520.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.LoginController"
+            stylesheets="@../style/login.css">
+
+    <children>
+
+        <HBox fx:id="rootBox"
+              prefWidth="900.0"
+              prefHeight="520.0"
+              spacing="0"
+              styleClass="login-root">
+
+            <!-- LEFT PANEL -->
+            <VBox fx:id="leftPane"
+                  prefWidth="420.0"
+                  alignment="CENTER"
+                  spacing="20"
+                  styleClass="left-panel">
+
+                <Label text="SIVERA" styleClass="brand-title"/>
+
+                <Label text="Sistem Informasi Vertical Farming Analitik"
+                       wrapText="true"
+                       maxWidth="280"
+                       alignment="CENTER"
+                       styleClass="brand-subtitle"/>
+
+                <Separator prefWidth="200"/>
+
+                <Label text="Pantau • Simulasi • Panen"
+                       styleClass="brand-footer"/>
+
+            </VBox>
+
+            <!-- RIGHT PANEL -->
+            <VBox fx:id="rightPane"
+                  prefWidth="480.0"
+                  alignment="CENTER"
+                  spacing="18"
+                  styleClass="right-panel">
+
+                <Label text="Login" styleClass="title"/>
+                <Label text="Masuk ke sistem SIVERA" styleClass="subtitle"/>
+
+                <VBox spacing="10" maxWidth="280">
+
+                    <Label text="Username"/>
+                    <TextField fx:id="usernameField"
+                               promptText="Masukkan username"/>
+
+                    <Label text="Password"/>
+                    <PasswordField fx:id="passwordField"
+                                   promptText="Masukkan password"/>
+
+                </VBox>
+
+                <Button fx:id="loginButton"
+                        text="LOGIN"
+                        prefWidth="280"
+                        prefHeight="40"
+                        onAction="#handleLogin"
+                        styleClass="login-button"/>
+
+                <Label text="© SIVERA 2025" styleClass="footer"/>
+
+            </VBox>
+
+        </HBox>
+
+    </children>
+</AnchorPane>

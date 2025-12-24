@@ -1,0 +1,44 @@
+/* ===== GLOBAL ROOT ===== */
+.root {
+    -fx-font-family: "Poppins";
+    -fx-background-color: #F4F6F8;
+}
+
+/* LABEL */
+.label {
+    -fx-text-fill: #2C3E50;
+    -fx-font-size: 13px;
+}
+
+/* GLOBAL BUTTON (NON-SIDEBAR) */
+.button:not(.sidebar-button):not(.sidebar-logout) {
+    -fx-background-color: #3498DB;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+
+/* GLOBAL BUTTON HOVER (NON-SIDEBAR) */
+.button:not(.sidebar-button):not(.sidebar-logout):hover {
+    -fx-background-color: #2980B9;
+}
+
+/* INPUT */
+.text-field,
+.combo-box,
+.text-area {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #DCDDE1;
+}
+
+/* TABLE */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.table-view .column-header {
+    -fx-background-color: #ECF0F1;
+}

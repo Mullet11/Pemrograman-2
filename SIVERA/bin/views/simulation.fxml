@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.SimulationController"
+            stylesheets="@../style/simulation.css">
+
+    <!-- ================= CENTER CONTENT ================= -->
+    <center>
+        <VBox styleClass="content-area">
+
+            <!-- HEADER -->
+            <VBox styleClass="page-header">
+                <Label text="Simulation"
+                       styleClass="page-title"/>
+                <Label text="Sensor Monitoring dan Harvest Prediction"
+                       styleClass="page-subtitle"/>
+            </VBox>
+
+            <!-- CONTROL CARD -->
+            <VBox styleClass="card" spacing="16">
+                <Label text="Simulation Control"
+                       styleClass="section-title"/>
+
+                <ComboBox fx:id="batchBox"
+                          promptText="Select Batch"
+                          styleClass="input-box"/>
+
+                <HBox spacing="12">
+                    <Button text="Run Sensor Simulation"
+                            onAction="#simulate"
+                            styleClass="primary-button"/>
+
+                    <Button text="Check Harvest Readiness"
+                            onAction="#checkHarvest"
+                            styleClass="secondary-button"/>
+
+                    <Button text="Harvest Batch"
+                            onAction="#harvest"
+                            styleClass="danger-button"/>
+
+                    <Button text="Refresh"
+                            onAction="#refresh"
+                            styleClass="ghost-button"/>
+                </HBox>
+            </VBox>
+
+            <!-- OUTPUT CARD -->
+            <VBox styleClass="card" spacing="12">
+                <Label text="Simulation Output"
+                       styleClass="section-title"/>
+
+                <TextArea fx:id="outputArea"
+                          editable="false"
+                          wrapText="true"
+                          styleClass="output-area"/>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

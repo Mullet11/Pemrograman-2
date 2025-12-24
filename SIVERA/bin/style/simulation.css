@@ -1,0 +1,112 @@
+/* ================= ROOT ================= */
+
+.root {
+    -fx-font-family: "Segoe UI", "Arial";
+}
+
+/* ================= CONTENT AREA ================= */
+
+.content-area {
+    -fx-background-color: #F5F6FA;
+    -fx-padding: 24;
+    -fx-spacing: 24;
+}
+
+/* ================= HEADER ================= */
+
+.page-header {
+    -fx-spacing: 4;
+}
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #263238;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #607D8B;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 6);
+    -fx-spacing: 10;
+}
+
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #37474F;
+}
+
+/* ================= INPUT ================= */
+
+.input-box {
+    -fx-pref-width: 400;
+    -fx-background-radius: 8;
+}
+
+/* ================= BUTTONS ================= */
+
+.primary-button {
+    -fx-background-color: #2E7D32;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 10 18;
+}
+
+.primary-button:hover {
+    -fx-background-color: #256628;
+}
+
+.secondary-button {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 10 16;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #155FA0;
+}
+
+.danger-button {
+    -fx-background-color: #D32F2F;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 10 16;
+}
+
+.danger-button:hover {
+    -fx-background-color: #B71C1C;
+}
+
+.ghost-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #B0BEC5;
+    -fx-border-radius: 8;
+    -fx-text-fill: #455A64;
+    -fx-padding: 10 16;
+}
+
+.ghost-button:hover {
+    -fx-background-color: #ECEFF1;
+}
+
+/* ================= OUTPUT ================= */
+
+.output-area {
+    -fx-pref-height: 220;
+    -fx-background-radius: 8;
+    -fx-control-inner-background: #FAFAFA;
+    -fx-font-size: 13px;
+}
